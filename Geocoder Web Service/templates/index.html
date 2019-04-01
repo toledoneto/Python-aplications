@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> Data Collector App</title>
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+    <body>
+      <div class="container">
+        <h1>Geocoder</h1>
+        <h3>Please give us a .cvs file that contains the addresses to geocode. The file must have an "Address" column (attention to the capital A)</h3>
+        <form action="{{url_for('success')}}" method="POST" enctype="multipart/form-data">
+          <input type="file" name="file" > <br>
+          <button type="submit"> Submit </button>
+        </form>
+      <div class="output">
+        {{text|safe}}
+        {% include btn ignore missing %}
+      </div>
+      </div>
+    </body>
+</html>
